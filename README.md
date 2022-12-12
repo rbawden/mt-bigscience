@@ -4,7 +4,7 @@ Evaluation results for Machine Translation within the BigScience project
 
 ## Outputs and evaluation
 
-The raw outputs of the different models run on the MT datasets can be found in `outputs/{diabla,flores101,wmt-14}/{0,1}-shot/jsonl`.
+The raw outputs are in `outputs/{diabla,flores101,wmt-14}/{0,1}-shot/jsonl`.
 
 To extract the text (context, reference, prediction): 
 ```
