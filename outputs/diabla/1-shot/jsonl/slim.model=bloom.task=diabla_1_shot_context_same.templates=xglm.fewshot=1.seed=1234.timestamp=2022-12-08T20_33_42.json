@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "task_name": "diabla_1_shot_context_same",
+      "prompt_name": "xglm",
+      "bleu": 19.99126381947227,
+      "dataset_path": "rbawden/DiaBLa",
+      "dataset_name": null,
+      "subset": null,
+      "bleu_stderr": 1.0394840578497642
+    }
+  ],
+  "config": {
+    "model": "hf-causal",
+    "model_args": "use_accelerate=True,pretrained=/gpfsdswork/dataset/HuggingFace_Models/bigscience/bloom,tokenizer=/gpfsdswork/dataset/HuggingFace_Models/bigscience/bloom,dtype=bfloat16",
+    "task_args": "",
+    "num_fewshot": 1,
+    "batch_size": 8,
+    "device": "cuda",
+    "use_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "seed": 1234
+  }
+}
