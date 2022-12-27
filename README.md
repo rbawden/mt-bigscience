@@ -7,5 +7,5 @@ Evaluation results for Machine Translation within the BigScience project
 ### Extract all predictions and evaluate
 
 ```
-python scripts/process_{flores,diabla}_results.py
+python scripts/process_results_{flores,diabla}.py
 ```
