@@ -19,8 +19,8 @@ def extract_from_file(filename, newline_cut=False):
         for line in fp:
             raw = json.loads(line)
             tsv = [
-                protect(raw["ctx"], newline_cut),
-                protect(raw["target"][0], newline_cut),
+                protect(raw["ctx"]),
+                protect(raw["target"][0]),
                 protect(raw["pred"], newline_cut),
             ]
             content.append(tsv)
