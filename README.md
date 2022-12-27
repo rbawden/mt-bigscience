@@ -15,7 +15,6 @@ python scripts/jsonl_to_tsv.py <JSONL_FILE> <OUTPUT_TSV_FILE>
 
 ### Evaluate predictions
 
-To evaluate all DiaBLa predictions:
 ```
-python scripts/get_all_diabla_results.py outputs/diabla/
+python scripts/process_{flores,diabla}_results.py
 ```
