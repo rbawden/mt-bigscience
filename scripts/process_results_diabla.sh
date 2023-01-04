@@ -9,6 +9,7 @@ for jsonfile in `ls $outputdir/diabla/1-shot/jsonl/examples.* | grep -v "English
     for langdir in English-French French-English; do
 	src=`echo $langdir | cut -f1 -d"-"`
 	output=${jsonfile%.jsonl}.$langdir.jsonl
+	echo "python $scriptdir/get_langdir_docids.py $jsonfile $src > $output"
 	python $scriptdir/get_langdir_docids.py $jsonfile $src > $output
 	echo "Producing $output"
     done
@@ -30,23 +31,34 @@ for jsonfile in $outputdir/diabla/1-shot/jsonl/examples.*; do
     cat $outputdir/diabla/1-shot/tsv/$output | python $scriptdir/custom_truncate.py > $new_output
 done
 
-rm $outputdir/diabla/1-shot/bleu-results.English-French.tsv $outputdir/diabla/1-shot/bleu-results.French-English.tsv
-rm $outputdir/diabla/1-shot/comet-results.English-French.tsv $outputdir/diabla/1-shot/comet-results.French-English.tsv
+#rm $outputdir/diabla/1-shot/bleu-results.English-French.tsv $outputdir/diabla/1-shot/bleu-results.French-English.tsv
+#rm $outputdir/diabla/1-shot/comet-results.English-French.tsv $outputdir/diabla/1-shot/comet-results.French-English.tsv
 # evaluate with BLEU
 for tsvfile in `ls $outputdir/diabla/1-shot/tsv/examples.*English-French* | sort`; do
-    bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-    comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
     filename=`basename $tsvfile`
-    echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.English-French.tsv
-    echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.English-French.tsv
+    if ! grep -q "$filename" "$outputdir/diabla/1-shot/bleu-results.English-French.tsv"; then
+	bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
+	echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.English-French.tsv
+    fi
+    if ! grep -q "$filename" "$outputdir/diabla/1-shot/comet-results.English-French.tsv"; then
+	#comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	    #-r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
+	#echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.English-French.tsv
+	echo
+    fi
     
 done
 for tsvfile in `ls $outputdir/diabla/1-shot/tsv/examples.*French-English* | sort`; do
-    bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-    comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
     filename=`basename $tsvfile`
-    echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.French-English.tsv
-    echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.French-English.tsv
+    if ! grep -q "$filename" "$outputdir/diabla/1-shot/bleu-results.French-English.tsv"; then
+	bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
+	echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.French-English.tsv
+    fi
+    if ! grep -q "$filename" "$outputdir/diabla/1-shot/comet-results.French-English.tsv"; then
+	#comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	    #-r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
+	#echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.French-English.tsv
+	echo
+    fi
+
 done
