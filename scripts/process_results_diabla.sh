@@ -41,9 +41,9 @@ for tsvfile in `ls $outputdir/diabla/1-shot/tsv/examples.*English-French* | sort
 	echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.English-French.tsv
     fi
     if ! grep -q "$filename" "$outputdir/diabla/1-shot/comet-results.English-French.tsv"; then
-	#comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    #-r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
-	#echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.English-French.tsv
+	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
+	echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.English-French.tsv
 	echo
     fi
     
@@ -55,9 +55,9 @@ for tsvfile in `ls $outputdir/diabla/1-shot/tsv/examples.*French-English* | sort
 	echo -e "$filename\t$bleu" >> $outputdir/diabla/1-shot/bleu-results.French-English.tsv
     fi
     if ! grep -q "$filename" "$outputdir/diabla/1-shot/comet-results.French-English.tsv"; then
-	#comet=`comet-score -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    #-r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --gpus 0 --quiet`
-	#echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.French-English.tsv
+	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
+	echo -e "$filename\t$comet" >> $outputdir/diabla/1-shot/comet-results.French-English.tsv
 	echo
     fi
 

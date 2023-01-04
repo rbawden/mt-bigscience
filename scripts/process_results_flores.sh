@@ -27,12 +27,12 @@ done
 for tsvfile in `ls -1 $outputdir/$dataset/1-shot/tsv/examples.* | sort`; do
     filename=`basename $tsvfile`
     if ! grep -q "$filename" "$outputdir/$dataset/1-shot/bleu-results.tsv"; then
-	bleu=`sacrebleu -w2 -b <(cat "$tsvfile" | cut -f2) < <(cat "$tsvfile" | cut -f3)`
+	bleu=`sacrebleu -w2 -b -tok flores101 <(cat "$tsvfile" | cut -f2) < <(cat "$tsvfile" | cut -f3)`
 	echo -e "$filename\t$bleu" >> $outputdir/$dataset/1-shot/bleu-results.tsv
     fi
     if ! grep -q $filename $outputdir/$dataset/1-shot/comet-results.tsv; then
-	comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][a-z]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
-    -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --gpus 0 --quiet`		     
+	comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
+    -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
 	echo -e "$filename\t$comet" >> $outputdir/$dataset/1-shot/comet-results.tsv
     fi
     
