@@ -1,0 +1,222 @@
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut-custom-truncate.tsv	38.19
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut.tsv	38.19
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.tsv	40.59
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T08_56_30.newline-cut-custom-truncate.tsv	34.73
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T08_56_30.newline-cut.tsv	34.76
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T08_56_30.tsv	33.26
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_13_56.newline-cut-custom-truncate.tsv	23.30
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_13_56.newline-cut.tsv	23.30
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_13_56.tsv	23.33
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_29_35.newline-cut-custom-truncate.tsv	23.50
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_29_35.newline-cut.tsv	23.54
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_29_35.tsv	23.58
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_52_02.newline-cut-custom-truncate.tsv	18.90
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_52_02.newline-cut.tsv	18.90
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_52_02.tsv	18.88
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_09.newline-cut-custom-truncate.tsv	30.23
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_09.newline-cut.tsv	30.23
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_09.tsv	30.23
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-Hindi.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut-custom-truncate.tsv	16.74
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-Hindi.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut.tsv	16.43
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-Hindi.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.tsv	16.43
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_31_59.newline-cut-custom-truncate.tsv	40.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_31_59.newline-cut.tsv	40.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_31_59.tsv	40.02
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T09_32_21.newline-cut-custom-truncate.tsv	42.20
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T09_32_21.newline-cut.tsv	42.20
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T09_32_21.tsv	40.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.newline-cut-custom-truncate.tsv	28.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.newline-cut.tsv	28.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Brazilian Portuguese-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.tsv	28.05
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_19_57.newline-cut-custom-truncate.tsv	39.97
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_19_57.newline-cut.tsv	40.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_19_57.tsv	36.11
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_01_42.newline-cut-custom-truncate.tsv	40.08
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_01_42.newline-cut.tsv	40.15
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_01_42.tsv	34.89
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut-custom-truncate.tsv	29.09
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut.tsv	29.12
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Catalan-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.tsv	29.12
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut-custom-truncate.tsv	28.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut.tsv	28.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.tsv	28.54
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_49_35.newline-cut-custom-truncate.tsv	25.87
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_49_35.newline-cut.tsv	25.87
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_49_35.tsv	25.52
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_54_29.newline-cut-custom-truncate.tsv	49.61
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_54_29.newline-cut.tsv	49.44
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_54_29.tsv	44.41
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut-custom-truncate.tsv	28.67
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut.tsv	28.63
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.tsv	27.57
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_41_33.newline-cut-custom-truncate.tsv	42.72
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_41_33.newline-cut.tsv	42.72
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_41_33.tsv	38.75
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.newline-cut-custom-truncate.tsv	30.10
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.newline-cut.tsv	30.13
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.tsv	30.12
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	22.26
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	22.21
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	21.66
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Telugu.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	13.95
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Telugu.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	13.93
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Telugu.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	13.93
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_00_33.newline-cut-custom-truncate.tsv	39.77
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_00_33.newline-cut.tsv	39.66
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_00_33.tsv	28.83
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	2.88
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	2.88
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	2.85
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_32.newline-cut-custom-truncate.tsv	26.16
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_32.newline-cut.tsv	26.16
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_32.tsv	26.14
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_46_42.newline-cut-custom-truncate.tsv	27.26
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_46_42.newline-cut.tsv	27.26
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-English-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_46_42.tsv	27.29
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_36_57.newline-cut-custom-truncate.tsv	23.43
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_36_57.newline-cut.tsv	23.44
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_36_57.tsv	23.30
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T12_01_12.newline-cut-custom-truncate.tsv	39.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T12_01_12.newline-cut.tsv	39.60
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Brazilian Portuguese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T12_01_12.tsv	39.60
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut-custom-truncate.tsv	38.09
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut.tsv	38.13
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.tsv	38.13
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_58_07.newline-cut-custom-truncate.tsv	46.79
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_58_07.newline-cut.tsv	46.79
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-10T21_58_07.tsv	45.11
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_55_52.newline-cut-custom-truncate.tsv	19.61
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_55_52.newline-cut.tsv	18.96
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Hindi.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_55_52.tsv	17.04
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_48.newline-cut-custom-truncate.tsv	32.65
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_48.newline-cut.tsv	32.59
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Indonesian.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_48.tsv	29.50
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_12_32.newline-cut-custom-truncate.tsv	27.32
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_12_32.newline-cut.tsv	27.36
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_12_32.tsv	27.40
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_06.newline-cut-custom-truncate.tsv	33.65
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_06.newline-cut.tsv	33.65
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Vietnamese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_06.tsv	31.66
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Wolof.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut-custom-truncate.tsv	0.49
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Wolof.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut.tsv	0.49
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-Wolof.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.tsv	0.47
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-simplified Chinese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_06.newline-cut-custom-truncate.tsv	22.75
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-simplified Chinese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_06.newline-cut.tsv	22.75
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-French-simplified Chinese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_06.tsv	22.77
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut-custom-truncate.tsv	34.72
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut.tsv	34.82
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.tsv	34.59
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Catalan.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_30_21.newline-cut-custom-truncate.tsv	38.61
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Catalan.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_30_21.newline-cut.tsv	38.72
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Catalan.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_30_21.tsv	38.21
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut-custom-truncate.tsv	36.84
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut.tsv	36.95
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.tsv	36.21
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut-custom-truncate.tsv	27.16
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.newline-cut.tsv	27.24
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Galician-Latin American Spanish.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-22T09_58_35.tsv	27.24
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut-custom-truncate.tsv	23.62
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut.tsv	23.30
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-Bengali.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.tsv	22.97
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut-custom-truncate.tsv	35.40
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut.tsv	35.40
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.tsv	35.40
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut-custom-truncate.tsv	27.77
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.newline-cut.tsv	27.83
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Hindi-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T15_34_19.tsv	27.83
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_44_27.newline-cut-custom-truncate.tsv	44.62
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_44_27.newline-cut.tsv	44.62
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_44_27.tsv	44.59
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_37_02.newline-cut-custom-truncate.tsv	35.39
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_37_02.newline-cut.tsv	35.42
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Indonesian-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_37_02.tsv	29.75
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_50.newline-cut-custom-truncate.tsv	20.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_50.newline-cut.tsv	20.13
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_50.tsv	18.69
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_44_11.newline-cut-custom-truncate.tsv	20.27
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_44_11.newline-cut.tsv	19.69
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_44_11.tsv	18.37
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.newline-cut-custom-truncate.tsv	30.89
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.newline-cut.tsv	30.85
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Brazilian Portuguese.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T19_32_50.tsv	28.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut-custom-truncate.tsv	31.82
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.newline-cut.tsv	31.82
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-Catalan.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_18_47.tsv	31.82
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.newline-cut-custom-truncate.tsv	33.63
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.newline-cut.tsv	33.63
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T17_49_52.tsv	33.63
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_04_26.newline-cut-custom-truncate.tsv	32.49
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_04_26.newline-cut.tsv	27.81
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_04_26.tsv	24.48
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_28_12.newline-cut-custom-truncate.tsv	20.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_28_12.newline-cut.tsv	20.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Latin American Spanish-simplified Chinese.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_28_12.tsv	20.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	38.11
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	38.11
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	37.85
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_32.newline-cut-custom-truncate.tsv	1.45
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_32.newline-cut.tsv	1.44
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Swahili-Yoruba.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_36_32.tsv	1.43
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Telugu-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	27.53
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Telugu-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	27.56
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Telugu-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	18.29
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_05.newline-cut-custom-truncate.tsv	39.02
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_05.newline-cut.tsv	39.02
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T14_36_05.tsv	38.77
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_10.newline-cut-custom-truncate.tsv	32.37
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_10.newline-cut.tsv	32.40
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Vietnamese-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-14T13_39_10.tsv	28.57
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Wolof-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut-custom-truncate.tsv	6.81
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Wolof-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.newline-cut.tsv	6.70
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Wolof-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_23_24.tsv	4.67
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut-custom-truncate.tsv	13.00
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.newline-cut.tsv	12.95
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-English.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-19T09_09_29.tsv	3.81
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_47_36.newline-cut-custom-truncate.tsv	3.54
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_47_36.newline-cut.tsv	3.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Yoruba-Swahili.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-25T18_47_36.tsv	0.84
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_51_47.newline-cut-custom-truncate.tsv	16.05
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_51_47.newline-cut.tsv	16.06
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Arabic.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_51_47.tsv	15.58
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_30.newline-cut-custom-truncate.tsv	30.58
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_30.newline-cut.tsv	30.60
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_45_30.tsv	30.60
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_40_01.newline-cut-custom-truncate.tsv	30.58
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_40_01.newline-cut.tsv	30.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T09_40_01.tsv	30.55
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_08.newline-cut-custom-truncate.tsv	27.90
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_08.newline-cut.tsv	27.96
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-French.fewshot=1.batchsize=2.seed=1234.timestamp=2022-10-18T12_00_08.tsv	25.92
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_52.newline-cut-custom-truncate.tsv	20.76
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_52.newline-cut.tsv	20.78
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-simplified Chinese-Latin American Spanish.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T10_25_52.tsv	20.78
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut-custom-truncate.tsv	26.09
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut.tsv	4.72
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.tsv	4.09
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-26T17_01_06.newline-cut-custom-truncate.tsv	27.99
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-26T17_01_06.newline-cut.tsv	8.82
+examples.model=bloom.task=flores_101_mt_fewshot_fr2ar.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-26T17_01_06.tsv	8.44
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut-custom-truncate.tsv	27.40
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut.tsv	7.59
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.tsv	6.03
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T12_29_15.newline-cut-custom-truncate.tsv	29.68
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T12_29_15.newline-cut.tsv	19.86
+examples.model=bloom.task=flores_101_mt_fewshot_fr2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T12_29_15.tsv	17.19
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut-custom-truncate.tsv	16.15
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.newline-cut.tsv	13.34
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-28T14_39_20.tsv	13.08
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T07_49_34.newline-cut-custom-truncate.tsv	30.54
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T07_49_34.newline-cut.tsv	30.53
+examples.model=bloom.task=flores_101_mt_fewshot_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-16T07_49_34.tsv	30.14
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_43.newline-cut-custom-truncate.tsv	29.91
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_43.newline-cut.tsv	29.91
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_43.tsv	29.91
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-28T16_20_33.newline-cut-custom-truncate.tsv	
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-28T16_20_33.newline-cut.tsv	
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2022-12-28T16_20_33.tsv	
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_23_53.newline-cut-custom-truncate.tsv	29.07
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_23_53.newline-cut.tsv	29.07
+examples.model=bloom.task=flores_101_mt_fewshot_wmt_hi2en.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_23_53.tsv	29.06
+examples.model=bloom.task=flores_101_mt_fewshot_en2bn.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_05.newline-cut-custom-truncate.tsv	24.70
+examples.model=bloom.task=flores_101_mt_fewshot_en2bn.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_05.newline-cut.tsv	23.97
+examples.model=bloom.task=flores_101_mt_fewshot_en2bn.templates=flores-xglm-Bengali-English.fewshot=1.seed=1234.timestamp=2023-01-05T11_27_05.tsv	23.97

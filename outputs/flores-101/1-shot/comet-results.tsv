@@ -1,0 +1,4 @@
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut-custom-truncate.tsv	/dev/fd/61	score: 0.5767
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.newline-cut.tsv	
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-English.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-11T10_39_02.tsv	
+examples.model=bloom.task=flores_101_mt.templates=flores-xglm-Arabic-French.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-13T08_56_30.newline-cut-custom-truncate.tsv	
