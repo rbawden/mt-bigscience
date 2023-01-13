@@ -3,7 +3,7 @@
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
 dataset=flores-101
-shot_num=1
+shot_num=0
 
 # extract tsv from jsonl
 echo ">> Extracting tsv from jsonl"
@@ -25,9 +25,9 @@ done
 
 
 # evaluate with BLEU and COMET (do not rewrite COMET each time as results take a while to recalculate)
-echo -e "model\ttask\ttemplate\tfewshot\tseed\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
+echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
 if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.tsv ]; then
-    echo -e "model\ttask\ttemplate\tfewshot\tseed\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+    echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 fi
 for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.* | sort`; do
     filename=`basename $tsvfile`
@@ -37,15 +37,17 @@ for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.* | sort`;
     fewshot=`echo $tsvfile | perl -pe 's/.+?fewshot=(.+?)\.seed.+?$/\1/'`
     seed=`echo $tsvfile | perl -pe 's/.+?seed=(.+?)\.timestamp.+?$/\1/'`
     timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
-
+    postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.(.*?)\.?tsv/\1/'`
+    
     if ! grep -q "$filename" "$outputdir/$dataset/$shot_num-shot/bleu-results.tsv"; then
 	bleu=`sacrebleu -w2 -b -tok flores101 <(cat "$tsvfile" | cut -f2) < <(cat "$tsvfile" | cut -f3)`
-	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$timestamp\t$filename\t$bleu\t" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
+	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
     fi
     if ! grep -q $filename $outputdir/$dataset/$shot_num-shot/comet-results.tsv; then
-	comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
-          -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
-	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	#comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
+        #  -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
+	#echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	echo
     fi
 done
 IFS="$OIFS"
