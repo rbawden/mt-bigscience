@@ -3,13 +3,13 @@
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
 dataset=wmt14-fr-en
-shot_num=2
+shot_num=5
 
-# extract tsv from jsonl
+# extract tsv from json
 echo ">> Extracting tsv from jsonl"
 OIFS="$IFS"
 IFS=$'\n'
-for jsonfile in `find $outputdir/$dataset/$shot_num-shot/jsonl -type f -name examples.*`; do
+for jsonfile in `find $outputdir/$dataset/$shot_num-shot/jsonl -type f -name examples.*.jsonl`; do
     # basic output
     output=`basename ${jsonfile%.jsonl}.tsv`;
     echo "Producing $output"
@@ -29,7 +29,7 @@ echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tsp
 if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.tsv ]; then
     echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 fi
-for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.* | sort`; do
+for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | sort`; do
     filename=`basename $tsvfile`
     model=`echo $tsvfile | perl -pe 's/.+?model=(.+?)\.task.+?$/\1/'`
     task=`echo $tsvfile | perl -pe 's/.+?task=(.+?)\.templates.+?$/\1/'`
