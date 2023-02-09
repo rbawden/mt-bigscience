@@ -2,7 +2,7 @@
 
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
-dataset=wmt14-fr-en
+dataset=wmt14_fr_en
 shot_num=5
 
 # extract tsv from json
@@ -35,6 +35,7 @@ for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | so
     task=`echo $tsvfile | perl -pe 's/.+?task=(.+?)\.templates.+?$/\1/'`
     templates=`echo $tsvfile | perl -pe 's/.+?templates=(.+?)\.fewshot.+?$/\1/'`
     fewshot=`echo $tsvfile | perl -pe 's/.+?fewshot=(.+?)\.(seed|batchsize).+?$/\1/'`
+    batchsize=`echo $tsvfile | perl -pe 's/.+?batchsize=(.+?)\.seed.+?$/\1/'`    
     seed=`echo $tsvfile | perl -pe 's/.+?seed=(.+?)\.timestamp.+?$/\1/'`
     timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
     postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.(.*?)\.?tsv/\1/'`
@@ -44,9 +45,9 @@ for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | so
 	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
     fi
     if ! grep -q $filename $outputdir/$dataset/$shot_num-shot/comet-results.tsv; then
-	#comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
-        #  -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
-	#echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
+          -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
+	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 	echo
     fi
 done
