@@ -42,6 +42,7 @@ for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | so
     task=`echo $tsvfile | perl -pe 's/.+?task=(.+?)\.templates.+?$/\1/'`
     templates=`echo $tsvfile | perl -pe 's/.+?templates=(.+?)\.fewshot.+?$/\1/'`
     fewshot=`echo $tsvfile | perl -pe 's/.+?fewshot=(.+?)\.(seed|batchsize).+?$/\1/'`
+    batchsize=`echo $tsvfile | perl -pe 's/.+?batchsize=(.+?)\.seed.+?$/\1/'`    
     seed=`echo $tsvfile | perl -pe 's/.+?seed=(.+?)\.timestamp.+?$/\1/'`
     timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
     postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.(.*?)\.?tsv/\1/'`
