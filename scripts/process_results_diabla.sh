@@ -2,7 +2,7 @@
 
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
-shot_num=0
+shot_num=1
 
 # separate language directions
 echo ">> Separating language directions"
@@ -37,29 +37,42 @@ done
 # evaluate with BLEU
 for tsvfile in `ls $outputdir/diabla/$shot_num-shot/tsv/examples.*English-French* | sort`; do
     filename=`basename $tsvfile`
+    model=`echo $tsvfile | perl -pe 's/.+?model=(.+?)\.task.+?$/\1/'`
+    task=`echo $tsvfile | perl -pe 's/.+?task=(.+?)\.templates.+?$/\1/'`
+    templates=`echo $tsvfile | perl -pe 's/.+?templates=(.+?)\.fewshot.+?$/\1/'`
+    fewshot=`echo $tsvfile | perl -pe 's/.+?fewshot=(.+?)\.seed.+?$/\1/'`
+    seed=`echo $tsvfile | perl -pe 's/.+?seed=(.+?)\.timestamp.+?$/\1/'`
+    timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
+    postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.English-French\.(.*?)\.?tsv/\1/'`
     if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv"; then
 	bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-	echo -e "$filename\t$bleu" >> $outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv
+	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv
     fi
-    if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv"; then
-	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
-	echo -e "$filename\t$comet" >> $outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv
-	echo
-    fi
+#    if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv"; then
+#	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+    #	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
+    #    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet >> $outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv
+#	echo
+ #   fi
     
 done
 for tsvfile in `ls $outputdir/diabla/$shot_num-shot/tsv/examples.*French-English* | sort`; do
     filename=`basename $tsvfile`
+    model=`echo $tsvfile | perl -pe 's/.+?model=(.+?)\.task.+?$/\1/'`
+    task=`echo $tsvfile | perl -pe 's/.+?task=(.+?)\.templates.+?$/\1/'`
+    templates=`echo $tsvfile | perl -pe 's/.+?templates=(.+?)\.fewshot.+?$/\1/'`
+    fewshot=`echo $tsvfile | perl -pe 's/.+?fewshot=(.+?)\.seed.+?$/\1/'`
+    seed=`echo $tsvfile | perl -pe 's/.+?seed=(.+?)\.timestamp.+?$/\1/'`
+    timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
+    postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.French-English\.(.*?)\.?tsv/\1/'`
     if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv"; then
 	bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-	echo -e "$filename\t$bleu" >> $outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv
+	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv
     fi
-    if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv"; then
-	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
-	echo -e "$filename\t$comet" >> $outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv
-	echo
-    fi
+    #if ! grep -q "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv"; then
+#	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+    #	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
+#    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet >> $outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv 
+ #   fi
 
 done

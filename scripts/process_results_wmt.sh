@@ -2,8 +2,8 @@
 
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
-dataset=wmt14-fr-en
-shot_num=5
+dataset=wmt14_fr_en
+shot_num=1
 
 # extract tsv from json
 echo ">> Extracting tsv from jsonl"
@@ -12,20 +12,27 @@ IFS=$'\n'
 for jsonfile in `find $outputdir/$dataset/$shot_num-shot/jsonl -type f -name examples.*.jsonl`; do
     # basic output
     output=`basename ${jsonfile%.jsonl}.tsv`;
-    echo "Producing $output"
-    python $scriptdir/jsonl_to_tsv.py "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
+    if [ ! -f $output ]; then
+	echo "Producing $output"
+	python $scriptdir/jsonl_to_tsv.py "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
+    fi
     # cut on first newline
     output=`basename ${jsonfile%.jsonl}.newline-cut.tsv`;
-    echo "Producing $output"
-    python $scriptdir/jsonl_to_tsv.py -n "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
+    if [ ! -f $output ]; then
+	python $scriptdir/jsonl_to_tsv.py -n "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
+    fi
     # also do custom truncation to avoid repeating translations
     new_output="$outputdir/$dataset/$shot_num-shot/tsv/${output%.tsv}-custom-truncate.tsv"
-    cat "$outputdir/$dataset/$shot_num-shot/tsv/$output" | python $scriptdir/custom_truncate.py > "$new_output"
+    if [ ! -f $new_output ]; then
+	cat "$outputdir/$dataset/$shot_num-shot/tsv/$output" | python $scriptdir/custom_truncate.py > "$new_output"
+    fi
 done
 
 
 # evaluate with BLEU and COMET (do not rewrite COMET each time as results take a while to recalculate)
-echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
+if [ ! -f $outputdir/$dataset/$shot_num-shot/bleu-results.tsv ]; then
+    echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
+fi
 if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.tsv ]; then
     echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 fi
@@ -39,14 +46,15 @@ for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | so
     timestamp=`echo $tsvfile | perl -pe 's/.+?timestamp=(.+?)\..+?$/\1/'`
     postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.(.*?)\.?tsv/\1/'`
     
-    if ! grep -q "$filename" "$outputdir/$dataset/$shot_num-shot/bleu-results.tsv"; then
+    if ! grep -Fq "$filename" "$outputdir/$dataset/$shot_num-shot/bleu-results.tsv"; then
+	echo "Recalculating BLEU score for $tsvfile"
 	bleu=`sacrebleu -w2 -b -tok 13a <(cat "$tsvfile" | cut -f2) < <(cat "$tsvfile" | cut -f3)`
-	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
+	echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
     fi
-    if ! grep -q $filename $outputdir/$dataset/$shot_num-shot/comet-results.tsv; then
+    if ! grep -Fq "$filename" "$outputdir/$dataset/$shot_num-shot/comet-results.tsv"; then
 	#comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
         #  -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
-	#echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	#echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 	echo
     fi
 done
