@@ -1,21 +1,24 @@
-examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.newline-cut-custom-truncate.tsv	
-examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.newline-cut.tsv	
-examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T12_48_17.French-English.newline-cut-custom-truncate.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T12_48_17.French-English.newline-cut.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T12_48_17.French-English.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T17_06_55.French-English.newline-cut-custom-truncate.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T17_06_55.French-English.newline-cut.tsv	
-examples.model=bloom.task=diabla_1_shot_context.templates=xglm.fewshot=1.batchsize=1.seed=1234.timestamp=2022-10-29T17_06_55.French-English.tsv	
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut-custom-truncate.tsv	
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut.tsv	
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.batchsize=4.seed=1234.timestamp=2022-10-30T08_17_13.French-English.tsv	
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut-custom-truncate.tsv	41.36
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut.tsv	15.11
-examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.tsv	12.05
-examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut-custom-truncate.tsv	41.20
-examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut.tsv	14.20
-examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.tsv	8.56
-examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut-custom-truncate.tsv	41.57
-examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut.tsv	21.05
-examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.tsv	12.34
+bloom	diabla	xglm	1	1234	newline-cut-custom-truncate	2022-10-30T08_17_13	examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut-custom-truncate.tsv	41.36	
+bloom	diabla	xglm	1	1234	newline-cut	2022-10-30T08_17_13	examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.newline-cut.tsv	15.11	
+bloom	diabla	xglm	1	1234		2022-10-30T08_17_13	examples.model=bloom.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2022-10-30T08_17_13.French-English.tsv	12.05	
+bloom	diabla_1_shot_context_opposite	xglm	1	1234	newline-cut-custom-truncate	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut-custom-truncate.tsv	41.20	
+bloom	diabla_1_shot_context_opposite	xglm	1	1234	newline-cut	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut.tsv	14.20	
+bloom	diabla_1_shot_context_opposite	xglm	1	1234		2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.tsv	8.56	
+bloom	diabla_1_shot_context_random	xglm	1	1234	newline-cut-custom-truncate	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut-custom-truncate.tsv	41.57	
+bloom	diabla_1_shot_context_random	xglm	1	1234	newline-cut	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut.tsv	21.05	
+bloom	diabla_1_shot_context_random	xglm	1	1234		2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_random.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.tsv	12.34	
+bloom	diabla_1_shot_context_same	xglm	1	1234	newline-cut-custom-truncate	2022-12-08T20_33_42	examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.newline-cut-custom-truncate.tsv	42.10	
+bloom	diabla_1_shot_context_same	xglm	1	1234	newline-cut	2022-12-08T20_33_42	examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.newline-cut.tsv	41.27	
+bloom	diabla_1_shot_context_same	xglm	1	1234		2022-12-08T20_33_42	examples.model=bloom.task=diabla_1_shot_context_same.templates=xglm.fewshot=1.seed=1234.timestamp=2022-12-08T20_33_42.French-English.tsv	20.71	
+opt	diabla	xglm	1	1234	newline-cut-custom-truncate	2023-01-14T13_54_18	examples.model=opt.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-01-14T13_54_18.French-English.newline-cut-custom-truncate.tsv	37.63	
+opt	diabla	xglm	1	1234	newline-cut	2023-01-14T13_54_18	examples.model=opt.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-01-14T13_54_18.French-English.newline-cut.tsv	17.07	
+opt	diabla	xglm	1	1234		2023-01-14T13_54_18	examples.model=opt.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-01-14T13_54_18.French-English.tsv	12.05	
+T0	diabla	xglm	1	1234	newline-cut-custom-truncate	2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.French-English.newline-cut-custom-truncate.tsv	21.09	
+T0	diabla	xglm	1	1234	newline-cut	2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.French-English.newline-cut.tsv	20.57	
+T0	diabla	xglm	1	1234		2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.French-English.tsv	20.57	
+T0	diabla	xglm	1	1234	newline-cut-custom-truncate	2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.4000-5000.French-English.newline-cut-custom-truncate.tsv	21.09	
+T0	diabla	xglm	1	1234	newline-cut	2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.4000-5000.French-English.newline-cut.tsv	20.57	
+T0	diabla	xglm	1	1234		2023-02-07T14_42_44	examples.model=T0.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-07T14_42_44.4000-5000.French-English.tsv	20.57	
+mt0-xxl	diabla	xglm	1	1234	newline-cut-custom-truncate	2023-02-09T08_15_39	examples.model=mt0-xxl.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-09T08_15_39.French-English.newline-cut-custom-truncate.tsv	27.20	
+mt0-xxl	diabla	xglm	1	1234	newline-cut	2023-02-09T08_15_39	examples.model=mt0-xxl.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-09T08_15_39.French-English.newline-cut.tsv	26.88	
+mt0-xxl	diabla	xglm	1	1234		2023-02-09T08_15_39	examples.model=mt0-xxl.task=diabla.templates=xglm.fewshot=1.seed=1234.timestamp=2023-02-09T08_15_39.French-English.tsv	26.88	

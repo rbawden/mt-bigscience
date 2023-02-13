@@ -12,13 +12,13 @@ IFS=$'\n'
 for jsonfile in `find $outputdir/$dataset/$shot_num-shot/jsonl -type f -name examples.*.jsonl`; do
     # basic output
     output=`basename ${jsonfile%.jsonl}.tsv`;
-    if [ ! -f $output ]; then
+    if [ ! -f $outputdir/$dataset/$shot_num-shot/tsv/$output ]; then
 	echo "Producing $output"
 	python $scriptdir/jsonl_to_tsv.py "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
     fi
     # cut on first newline
     output=`basename ${jsonfile%.jsonl}.newline-cut.tsv`;
-    if [ ! -f $output ]; then
+    if [ ! -f $outputdir/$dataset/$shot_num-shot/tsv/$output ]; then
 	python $scriptdir/jsonl_to_tsv.py -n "$jsonfile" "$outputdir/$dataset/$shot_num-shot/tsv/$output";
     fi
     # also do custom truncation to avoid repeating translations
