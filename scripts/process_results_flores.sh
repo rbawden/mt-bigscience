@@ -52,10 +52,9 @@ for shot_num in 0 1; do
 	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
 	fi
 	if ! grep -Fq "$filename" "$outputdir/$dataset/$shot_num-shot/comet-results.tsv"; then
-	    #comet=`comet-score -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
-		#  -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet`		     
-	    #echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
-	    echo
+	    comet=`comet-score --batch_size 8 -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
+		  -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet | perl -pe 's/^.+?score: ([\-0-9\.]+)/\1/'`
+	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet\t" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 	fi
     done
     IFS="$OIFS"
