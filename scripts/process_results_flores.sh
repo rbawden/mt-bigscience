@@ -3,7 +3,6 @@
 scriptdir=`dirname $0`
 outputdir=`realpath $scriptdir/../outputs`
 dataset=flores-101
-#shot_num=1
 
 for shot_num in 0 1; do
     # extract tsv from jsonl
