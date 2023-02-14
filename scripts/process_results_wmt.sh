@@ -5,8 +5,8 @@ outputdir=`realpath $scriptdir/../outputs`
 #dataset=wmt14_fr_en
 #shot_num=1
 
-for dataset in wmt14_fr_en wmt14_hi_en; do
-    for shot_num in 0 1 2 5; do
+for dataset in wmt14_fr_en; do # wmt14_hi_en; do
+    for shot_num in 0; do #0 1 2 5; do
 	# extract tsv from json
 	echo ">> Extracting tsv from jsonl"
 	OIFS="$IFS"
