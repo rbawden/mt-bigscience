@@ -58,14 +58,13 @@ for shot_num in 0 1; do
 	postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.English-French\.(.*?)\.?tsv/\1/'`
 	if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv"; then
 	    bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv
+	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu" >> $outputdir/diabla/$shot_num-shot/bleu-results.English-French.tsv
 	fi
-	#    if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv"; then
-	#	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    #	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
-	#    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet >> $outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv
-	#	echo
-	#   fi
+	    if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv"; then
+		comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	   	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet | perl -pe 's/^.+?score: ([\-0-9\.]+)/\1/'`
+		echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet" >> $outputdir/diabla/$shot_num-shot/comet-results.English-French.tsv
+	   fi
 	
     done
     
@@ -87,13 +86,12 @@ for shot_num in 0 1; do
 	postproc=`echo $tsvfile | perl -pe 's/.+?timestamp=.+?\.French-English\.(.*?)\.?tsv/\1/'`
 	if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv"; then
 	    bleu=`sacrebleu -w2 -b <(cat $tsvfile | cut -f2) < <(cat $tsvfile | cut -f3)`
-	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu\t" >> $outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv
+	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu" >> $outputdir/diabla/$shot_num-shot/bleu-results.French-English.tsv
 	fi
-	#if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv"; then
-	#	comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
-	    #	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet`
-	#    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet >> $outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv 
-	#   fi
-	
+	if ! grep -Fq "$filename" "$outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv"; then
+	    comet=`comet-score --batch_size 8 -s <(cat $tsvfile | cut -f1 | perl -pe 's/^.*?### (English|French): *(.+?) *= (English|French):$/\2/') \
+	    	    -r <(cat $tsvfile | cut -f2) -t <(cat $tsvfile | cut -f3) --quiet | perl -pe 's/^.+?score: ([\-0-9\.]+)/\1/'`
+	    echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet" >> $outputdir/diabla/$shot_num-shot/comet-results.French-English.tsv
+	fi
     done
 done
