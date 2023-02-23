@@ -23,7 +23,7 @@ outputdir=$maindir/runs/outputs
 [ -d $outputdir ] || mkdir $outputdir
 
 modelname=opt
-modelpath=facebook/opt-66 # you may need to download a local copy
+modelpath=facebook/opt-66b # you may need to download a local copy
 tokeniserpath=$modelpath
 
 # choose a task and comment the other

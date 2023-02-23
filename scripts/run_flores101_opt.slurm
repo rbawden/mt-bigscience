@@ -19,8 +19,8 @@ maindir=/gpfswork/rech/ncm/ulv12mq/lm-evaluation-harness
 outputdir=$maindir/runs/outputs
 [ -d $outputdir ] || mkdir $outputdir
 
-modelname=mt0-xxl
-modelpath=bigscience/mt0-xxl #/gpfswork/rech/ncm/ulv12mq/mt0-xxl # you may need to download a local copy
+modelname=opt
+modelpath=facebook/opt-66b # you may need to download a local copy
 tokeniserpath=$modelpath
 
 task=flores_101_mt
