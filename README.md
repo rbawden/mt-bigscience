@@ -100,10 +100,10 @@ TODO:
   (Original outputs with no postprocessing)
   
 | | | Original | | Truncated | |
-| 1-shot example direction type | | spBLEU | COMET | spBLEU | COMET |
-Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
-Opposite | en→bn | 21.81 | 0.3132 | 29.42 | 0.4143 |
-Related source | hi→en | 30.14 | 0.4492 | 30.54 | 0.4603 |
-Related source (from WMT) | hi→en | 29.06 | 0.4216 | 29.07 | 0.4274 |
-HR unrelated source | fr→en | 17.19 | 0.3147 | 29.68 | 0.3960 |
-HR unrelated source | fr→ar | 8.44 | -0.1025 | 27.99 | 0.3218 |
+| 1-shot example direction type | spBLEU | COMET | spBLEU | COMET |
+| Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
+| Opposite | en→bn | 21.81 | 0.3132 | 29.42 | 0.4143 |
+| Related source | hi→en | 30.14 | 0.4492 | 30.54 | 0.4603 |
+| Related source (from WMT) | hi→en | 29.06 | 0.4216 | 29.07 | 0.4274 |
+| HR unrelated source | fr→en | 17.19 | 0.3147 | 29.68 | 0.3960 |
+| HR unrelated source | fr→ar | 8.44 | -0.1025 | 27.99 | 0.3218 |
