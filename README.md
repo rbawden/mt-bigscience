@@ -100,7 +100,7 @@ TODO:
   (Original outputs with no postprocessing)
   
 
-| 1-shot example direction type | 1-shot example direction | spBLEU orig | COMET orig | spBLEU trunc | COMET trunc |
+| 1-shot example direction type | 1-shot example direction | spBLEU orig. | COMET orig. | spBLEU trunc. | COMET trunc. |
 |---|---|---|---|---|---|
 | Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
 | Opposite | en→bn | 21.81 | 0.3132 | 29.42 | 0.4143 |
