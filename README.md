@@ -97,6 +97,7 @@ TODO:
  
  
  ### Flores-101: Transfer using 1-shot example from a different language direction
+  (Original outputs with no postprocessing)
 | | | Original | | Truncated | |
 | 1-shot example direction type | spBLEU | COMET | spBLEU | COMET |
 Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
