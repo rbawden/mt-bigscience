@@ -14,7 +14,7 @@ def load_df(filename, model, postproc, task):
     return data
 
 # table of high-resource MT results
-def table_highresource(results_file, model='bloom', postproc=''):
+def table_highresource(results_file, model='bloom', postproc='', tab_format='latex'):
     data = load_df(results_file, model, postproc, 'flores_101_mt')
     m2m = {'ar': {'en': 25.50, 'es': 16.74, 'fr': 25.69, 'zh': 13.10},
            'en': {'ar': 17.92, 'es': 25.57, 'fr': 41.99, 'zh': 19.33},
@@ -42,21 +42,31 @@ def table_highresource(results_file, model='bloom', postproc=''):
                 
     # print latex table
     precision = 4 if 'comet' in results_file else 2
-    print(r'\scalebox{0.85}{')
-    print(r'\begin{tabular}{llrrrrr}')
-    print(r'\toprule')
-    print(r'Src $\downarrow$ & Trg $\rightarrow$ & ' + ' & '.join(sorted(lang2lang)) + r' \\')
+    if tab_format == 'latex':
+        print(r'\scalebox{0.85}{')
+        print(r'\begin{tabular}{llrrrrr}')
+        print(r'\toprule')
+        print(r'Src $\downarrow$ & Trg $\rightarrow$ & ' + ' & '.join(sorted(lang2lang)) + r' \\')
+    else:
+        print('| Src↓ | Trg→ | ' + ' | '.join(sorted(lang2lang)) + ' |')
+        print('|' + '---|'*(len(lang2lang) + 2))
+    
     for lang in sorted(lang2lang):
-        print(r'\midrule')
         results = [f"{round(lang2lang[lang][trg], precision):{precision}.{precision}f}" if lang2lang[lang][trg] != '--' else '--' for trg in sorted(lang2lang)]
         m2m_results = [f"{round(m2m[lang][trg], precision):{precision}.{precision}f}" if trg in m2m[lang]  else '--' for trg in sorted(lang2lang)]
-        print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
-        print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
-
-    print(r'\bottomrule')
-    print(r'\end{tabular}}')
-    print(r'\caption{High-resource language pairs.}')
-    print(r'\label{tab:flores101_summary:high-high}')
+        if tab_format == 'latex':
+            print(r'\midrule')
+            print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
+            print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
+        else:
+            print(' | ' + lang + ' | Bloom | ' + ' | '.join(results) + ' |')
+            print(' |  | M2M | ' + ' | '.join(m2m_results) + ' |')
+              
+    if tab_format == 'latex':
+        print(r'\bottomrule')
+        print(r'\end{tabular}}')
+        print(r'\caption{High-resource language pairs.}')
+        print(r'\label{tab:flores101_summary:high-high}')
     print('\n\n')
 
 
@@ -79,7 +89,7 @@ def table_midresource(results_file, model='bloom', postproc=''):
         for lang2 in langs:
             lg2 = lang2code.get(lang2, lang2[:2].lower())
             if lang1 != lang2:
-                result = data[data['template'] == 'flores-xglm-' + lang1 + '-' + lang2 + '-source+target']
+                result = data[data['template'] == 'xglm-' + lang1 + '-' + lang2 + '-source+target']
                 assert len(result) <= 1
                 if len(result) == 0:
                     lang2lang[lg1][lg2] = '--'
@@ -88,24 +98,33 @@ def table_midresource(results_file, model='bloom', postproc=''):
             else:
                 lang2lang[lg1][lg2] = '--'
 
-    # get table
+    # print latex table
     precision = 4 if 'comet' in results_file else 2
-    print(r'\scalebox{0.85}{')
-    print(r'\begin{tabular}{llrrrrr}')
-    print(r'\toprule')
     lang_codes = [lang2code.get(x, x[:2].lower()) for x in langs]
-    print(r'Src $\downarrow$ & Trg $\rightarrow$ & ' + ' & '.join(lang_codes) + r' \\')
+    if tab_format == 'latex':
+        print(r'\scalebox{0.85}{')
+        print(r'\begin{tabular}{llrrrrr}')
+        print(r'\toprule')
+        print(r'Src $\downarrow$ & Trg $\rightarrow$ & ' + ' & '.join(lang_codes) + r' \\')
+    else:
+        print('| Src↓ | Trg→ | ' + ' | '.join(sorted(lang_codes)) + ' |')
+        print('|' + '---|'*(len(lang2lang) + 2))
 
     for lang in lang_codes:
-        print(r'\midrule')
         results = [f"{round(lang2lang[lang][trg], precision):{precision}.{precision}f}" if lang2lang[lang][trg] != '--' else '--' for trg in lang_codes]
-        m2m_results = [f"{round(m2m[lang][trg], precision):{precision}.{precision}f}" if trg in m2m[lang]  else '--' for trg in sorted(lang2lang)]
-        print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
-        print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
-    print(r'\bottomrule')
-    print(r'\end{tabular}}')
-    print(r'\caption{High$\rightarrow$mid-resource language pairs.}')
-    print(r'\label{tab:flores101:high-mid}')
+        m2m_results = [f"{round(m2m[lang][trg], precision):{precision}.{precision}f}" if trg in m2m[lang]  else '--' for trg in sorted(lang_codes)]
+        if tab_format == "latex":
+            print(r'\midrule')
+            print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
+            print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
+        else:
+            print(' | ' + lang + ' | Bloom | ' + ' | '.join(results) + ' |')
+            print(' |  | M2M | ' + ' | '.join(m2m_results) + ' |')
+    if tab_format == "latex":
+        print(r'\bottomrule')
+        print(r'\end{tabular}}')
+        print(r'\caption{High$\rightarrow$mid-resource language pairs.}')
+        print(r'\label{tab:flores101:high-mid}')
     print('\n\n')
 
     
@@ -140,21 +159,30 @@ def table_lowresource(results_file, model='bloom', postproc=''):
     # get latex table
     precision = 4 if 'comet' in results_file else 2
     lang_codes = [lang2code.get(x, x[:2].lower()) for x in langs]
-    print(r'\scalebox{0.86}{')
-    print(r'\begin{tabular}{llrrrrr}')
-    print(r'\toprule')
-    print(r'Src$\downarrow$ & Trg$\rightarrow$ & ' + ' & '.join(lang_codes) + r' \\')
+    if tab_format == 'latex':
+        print(r'\scalebox{0.86}{')
+        print(r'\begin{tabular}{llrrrrr}')
+        print(r'\toprule')
+        print(r'Src$\downarrow$ & Trg$\rightarrow$ & ' + ' & '.join(lang_codes) + r' \\')
+    else:
+        print('| Src↓ | Trg→ | ' + ' | '.join(sorted(lang_codes)) + ' |')
+        print('|' + '---|'*(len(lang2lang) + 2))
     for lang in lang_codes:
-        print(r'\midrule')
         results = [f"{round(lang2lang[lang][trg], precision):{precision}.{precision}f}" if lang2lang[lang][trg] != '--' else '--' for trg in lang_codes]
         m2m_results = [f"{round(m2m[lang][trg], precision):{precision}.{precision}f}" if trg in m2m[lang]  else '--' for trg in lang_codes]
-        print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
-        print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
+        if tab_format == 'latex':
+            print(r'\midrule')
+            print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
+            print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
+        else:
+            print(' | ' + lang + ' | Bloom | ' + ' | '.join(results) + ' |')
+            print(' |  | M2M | ' + ' | '.join(m2m_results) + ' |')
 
-    print(r'\bottomrule')
-    print(r'\end{tabular}}')
-    print(r'\caption{Low-resource languages}')
-    print(r'\label{tab:flores101_summary:high-low}')
+    if tab_format == "latex":
+        print(r'\bottomrule')
+        print(r'\end{tabular}}')
+        print(r'\caption{Low-resource languages}')
+        print(r'\label{tab:flores101_summary:high-low}')
     print('\n\n')
 
 
@@ -188,35 +216,48 @@ def table_romance_langs(results_file, model='bloom', postproc=''):
                 
     # print latex table
     precision = 4 if 'comet' in results_file else 2
-    print(r'\resizebox{\linewidth}{!}{')
-    print(r'\begin{tabular}{llrrrrrr}')
-    print(r'\toprule')
-    print(r'Src$\downarrow$ & Trg$\rightarrow$ & ' + ' & '.join(sorted(lang2lang)) + r' \\')
+    if tab_format == "latex":
+        print(r'\resizebox{\linewidth}{!}{')
+        print(r'\begin{tabular}{llrrrrrr}')
+        print(r'\toprule')
+        print(r'Src$\downarrow$ & Trg$\rightarrow$ & ' + ' & '.join(sorted(lang2lang)) + r' \\')
+    else:
+        print('| Src↓ | Trg→ | ' + ' | '.join(sorted(lang2lang)) + ' |')
+        print('|' + '---|'*(len(lang2lang) + 2))
     for lang in sorted(lang2lang):
-        print(r'\midrule')
         results = [f"{round(lang2lang[lang][trg], precision):{precision}.{precision}f}" if lang2lang[lang][trg] != '--' else '--' for trg in sorted(lang2lang)]
         m2m_results = [f"{round(m2m[lang][trg], precision):{precision}.{precision}f}" if trg in m2m[lang]  else '--' for trg in sorted(lang2lang)]
-        print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
-        print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
-    print(r'\bottomrule')
-    print(r'\end{tabular}}')
-    print(r'\caption{Romance languages}')
-    print(r'\label{tab:flores101_summary:same-family}')
+        if tab_format == "latex":
+            print(r'\midrule')
+            print('\multirow{2}{*}{' + lang + r'} & \bloom & ' + ' & '.join(results) + r' \\')
+            print(r' & M2M & ' + ' & '.join(m2m_results) + r' \\')
+        else:
+            print(' | ' + lang + ' | Bloom | ' + ' | '.join(results) + ' |')
+            print(' |  | M2M | ' + ' | '.join(m2m_results) + ' |')
+    if tab_format == "latex":
+        print(r'\bottomrule')
+        print(r'\end{tabular}}')
+        print(r'\caption{Romance languages}')
+        print(r'\label{tab:flores101_summary:same-family}')
     print('\n\n')
     
 
 
 def table_transfer(bleu_results_file, comet_results_file):
     model= 'bloom'
-    
-    print(r'\begin{table}[!ht]')
-    print(r'\centering\small')
-    print(r'\resizebox{\linewidth}{!}{')
-    print(r'\begin{tabular}{llrrrr}')
-    print(r'\toprule')
-    print(r'                &  & \multicolumn{2}{c}{Original} & \multicolumn{2}{c}{Truncated} \\')
-    print(r'\multicolumn{2}{l}{1-shot example direction type} & spBLEU & COMET & spBLEU & COMET \\')
-    print(r'\midrule')
+
+    if tab_format == "latex":
+        print(r'\begin{table}[!ht]')
+        print(r'\centering\small')
+        print(r'\resizebox{\linewidth}{!}{')
+        print(r'\begin{tabular}{llrrrr}')
+        print(r'\toprule')
+        print(r'                &  & \multicolumn{2}{c}{Original} & \multicolumn{2}{c}{Truncated} \\')
+        print(r'\multicolumn{2}{l}{1-shot example direction type} & spBLEU & COMET & spBLEU & COMET \\')
+        print(r'\midrule')
+    else:
+        print('| 1-shot example direction type | 1-shot example direction | spBLEU orig. | COMET orig. | spBLEU trunc. | COMET trunc. |')
+        print('|' + '---|'*6)
 
     def list_results(task, template):
         bleu_data_orig = load_df(bleu_results_file, model, '', task)
@@ -230,23 +271,49 @@ def table_transfer(bleu_results_file, comet_results_file):
                 "%.4f" % round(comet_data_trunc[comet_data_trunc['template'] == template]['comet'].values[0], 4)]
 
     results = list_results('flores_101_mt', 'xglm-Bengali-English-source+target')
-    print(r'Same & bn$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    if tab_format == "latex":
+        print(r'Same & bn$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    else:
+        print("| Same | bn→en | " + " | ".join(results) + " |")
     results = list_results('flores_101_mt_fewshot_en2bn', 'xglm-Bengali-English-source+target')
-    print(r'Opposite & en$\rightarrow$bn & ' + ' & '.join(results) + r' \\')
-    print(r'\midrule')
+    if tab_format == "latex":
+        print(r'Opposite & en$\rightarrow$bn & ' + ' & '.join(results) + r' \\')
+        print(r'\midrule')
+    else:
+        print("| Opposite | en→bn | " + " | ".join(results) + " |")
     results = list_results('flores_101_mt_fewshot_hi2en', 'xglm-Bengali-English-source+target')
-    print(r'Related source & hi$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    if tab_format == "latex":
+        print(r'Related source & hi$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    else:
+        print("| Related source | hi→en | " + " | ".join(results) + " |")
     results = list_results('flores_101_mt_fewshot_wmt_hi2en', 'xglm-Bengali-English-source+target')
-    print(r'Related source (from WMT) & hi$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    if tab_format == "latex":
+        print(r'Related source (from WMT) & hi$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    else:
+         print("| Related source (from WMT) | hi→en | " + " | ".join(results) + " |")
     results = list_results('flores_101_mt_fewshot_fr2en', 'xglm-Bengali-English-source+target')
-    print(r'HR unrelated source & fr$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    if tab_format == "latex":
+        print(r'HR unrelated source & fr$\rightarrow$en & ' + ' & '.join(results) + r' \\')
+    else:
+        print("| HR unrelated source | fr→en | " + " | ".join(results) + " |")
     results = list_results('flores_101_mt_fewshot_fr2ar', 'xglm-Bengali-English-source+target')
-    print(r'HR unrelated source & fr$\rightarrow$ar & ' + ' & '.join(results) + r' \\')
-    print(r'\bottomrule')
-    print(r'\end{tabular}}')
-    print(r'\caption{\label{tab:bn-en-fewshot-variation}1-shot results for Flores bn$\rightarrow$en when varying the language direction of 1-shot examples. HR=high-resource.}')
-    print(r'\end{table}')
+    if tab_format == "latex":
+        print(r'HR unrelated source & fr$\rightarrow$ar & ' + ' & '.join(results) + r' \\')
+        print(r'\bottomrule')
+        print(r'\end{tabular}}')
+        print(r'\caption{\label{tab:bn-en-fewshot-variation}1-shot results for Flores bn$\rightarrow$en when varying the language direction of 1-shot examples. HR=high-resource.}')
+        print(r'\end{table}')
+    else:
+        print("| HR unrelated source | fr→ar | " + " | ".join(results) + " |")
 
+
+# choose which type of postprocessing to include (original or truncated)
+postproc='' # original
+#postproc='newline-cut-custom-truncate' # truncated
+
+# table format latex or markdown
+#tab_format='latex'
+tab_format='markdown'
     
 # print out all tables from this results file
 bleu_results_file = 'outputs/flores-101/1-shot/bleu-results.tsv'
@@ -256,12 +323,8 @@ comet_results_file = 'outputs/flores-101/1-shot/comet-results.tsv'
 results_file = bleu_results_file
 #results_file = comet_results_file
 
-# choose which type of postprocessing to include (original or truncated)
-postproc='' # original
-#postproc='newline-cut-custom-truncate' # truncated
-
 # print all tables
-table_highresource(results_file, postproc=postproc)
+table_highresource(results_file, postproc=postproc, tab_format=tab_format)
 table_midresource(results_file, postproc=postproc)
 
 table_lowresource(results_file, postproc=postproc)
