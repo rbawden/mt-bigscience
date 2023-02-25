@@ -101,6 +101,7 @@ TODO:
   
 | | | Original | | Truncated | |
 | 1-shot example direction type | | spBLEU | COMET | spBLEU | COMET |
+|---|---|---|---|---|---|
 | Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
 | Opposite | en→bn | 21.81 | 0.3132 | 29.42 | 0.4143 |
 | Related source | hi→en | 30.14 | 0.4492 | 30.54 | 0.4603 |
