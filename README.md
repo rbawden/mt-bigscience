@@ -99,9 +99,8 @@ TODO:
  ### Flores-101: Bengali→English MT, Transfer using 1-shot example from a different language direction
   (Original outputs with no postprocessing)
   
-| | | Original | | Truncated | |
-|---|---|---|---|---|---|
-| 1-shot example direction type | 1-shot example direction | spBLEU | COMET | spBLEU | COMET |
+
+| 1-shot example direction type | 1-shot example direction | spBLEU orig | COMET orig | spBLEU trunc | COMET trunc |
 |---|---|---|---|---|---|
 | Same | bn→en | 29.91 | 0.4440 | 29.91 | 0.4440 |
 | Opposite | en→bn | 21.81 | 0.3132 | 29.42 | 0.4143 |
