@@ -184,3 +184,20 @@ Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
 | Related source (from WMT) | hi→en | 29.06 | 0.4216 | 29.07 | 0.4274 |
 | HR unrelated source | fr→en | 17.19 | 0.3147 | 29.68 | 0.3960 |
 | HR unrelated source | fr→ar | 8.44 | -0.1025 | 27.99 | 0.3218 |
+
+### DiaBLa context results (1-shot with differing source of context)
+
+The 1-shot example can be:
+- from either anywhere in the document (Origin=Rand.) or the previous sentence (Origin=Prev.)
+- from any language direction (en→fr or fr→en) regardless of the language direction of the current example (Direction=rand.), from the same direction as the current example (Direction=same) or the opposite direction (Direction=opposite).
+
+| Origin | Direction | Truncate | en→fr BLEU | en→fr COMET | fr→en BLEU | fr→en COMET |
+|---|---|---|---|---|---|---|
+| Rand. | rand. | ❌ | 5.70 | 0.3421 | 12.05 | 0.6138 |
+| | | ✅ | 37.57 | 0.6343 | 41.36 | 0.7576 |
+| Prev. | rand. | ❌ | 6.10 | 0.3280 | 12.34 | 0.6166 |
+| | | ✅ | 38.51 | 0.6139 | 41.57 | 0.7513 |
+| Prev. | Same | ❌ | 19.32 | 0.5965 | 20.71 | 0.7190 |
+| | | ✅ | 38.95 | 0.6325 | 42.10 | 0.7607 |
+| Prev. | Opposite | ❌ | 3.64 | 0.0635 | 8.56 | 0.5184 |
+| | | ✅ | 37.76 | 0.5898 | 41.20 | 0.7423 |
