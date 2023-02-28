@@ -34,7 +34,7 @@ for dataset in wmt14_fr_en wmt14_hi_en; do
 	    echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
 	fi
 	if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.tsv ]; then
-	    echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	    echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tCOMET" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 	fi
 	for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.*.tsv | sort`; do
 	    filename=`basename $tsvfile`
@@ -53,9 +53,9 @@ for dataset in wmt14_fr_en wmt14_hi_en; do
 		echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$bleu" >> $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
 	    fi
 	    if ! grep -Fq "$filename" "$outputdir/$dataset/$shot_num-shot/comet-results.tsv"; then
-		comet=`comet-score --batch_size 8 -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
-		      -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet | perl -pe 's/^.+?score: ([\-0-9\.]+)/\1/'`
-		echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+#		comet=`comet-score --batch_size 8 -s <(cat "$tsvfile" | cut -f1 | perl -pe 's/^.*?### ([A-Z][\-a-z ]+?): *(.+?) *= ([A-Z][a-z]+?]):$/\2/') \
+#		      -r <(cat "$tsvfile" | cut -f2) -t <(cat "$tsvfile" | cut -f3) --quiet | perl -pe 's/^.+?score: ([\-0-9\.]+)/\1/'`
+#		echo -e "$model\t$task\t$templates\t$fewshot\t$seed\t$postproc\t$timestamp\t$filename\t$comet" >> $outputdir/$dataset/$shot_num-shot/comet-results.tsv
 		echo
 	    fi
 	done

@@ -34,7 +34,7 @@ for shot_num in 0 1; do
 	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.tsv
     fi
     if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.tsv ]; then
-	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
+	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tCOMET" > $outputdir/$dataset/$shot_num-shot/comet-results.tsv
     fi
     for tsvfile in `ls -1 $outputdir/$dataset/$shot_num-shot/tsv/examples.* | sort`; do
 	filename=`basename $tsvfile`

@@ -43,7 +43,7 @@ for shot_num in 0 1; do
 	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.English-French.tsv
     fi
     if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.English-French.tsv ]; then
-	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.English-French.tsv
+	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tCOMET" > $outputdir/$dataset/$shot_num-shot/comet-results.English-French.tsv
     fi
     
     # evaluate with BLEU and COMET
@@ -72,7 +72,7 @@ for shot_num in 0 1; do
 	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tspBLEU" > $outputdir/$dataset/$shot_num-shot/bleu-results.French-English.tsv
     fi
     if [ ! -f $outputdir/$dataset/$shot_num-shot/comet-results.French-English.tsv ]; then
-	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tcomet" > $outputdir/$dataset/$shot_num-shot/comet-results.French-English.tsv
+	echo -e "model\ttask\ttemplate\tfewshot\tseed\tpostproc\ttimestamp\tfilename\tCOMET" > $outputdir/$dataset/$shot_num-shot/comet-results.French-English.tsv
     fi
     
     for tsvfile in `ls $outputdir/diabla/$shot_num-shot/tsv/examples.*French-English* | sort`; do
