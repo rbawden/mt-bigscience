@@ -1,0 +1,7 @@
+model	task	template	fewshot	seed	postproc	timestamp	filename	BLEU
+bloom	wmt14_hi_en	xglm-en-hi-source+target	2	1234	newline-cut-custom-truncate	2023-01-02T22_18_13	examples.model=bloom.task=wmt14_hi_en.templates=xglm-en-hi-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_18_13.newline-cut-custom-truncate.tsv	15.78
+bloom	wmt14_hi_en	xglm-en-hi-source+target	2	1234	newline-cut	2023-01-02T22_18_13	examples.model=bloom.task=wmt14_hi_en.templates=xglm-en-hi-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_18_13.newline-cut.tsv	15.84
+bloom	wmt14_hi_en	xglm-en-hi-source+target	2	1234		2023-01-02T22_18_13	examples.model=bloom.task=wmt14_hi_en.templates=xglm-en-hi-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_18_13.tsv	15.84
+bloom	wmt14_hi_en	xglm-hi-en-source+target	2	1234	newline-cut-custom-truncate	2023-01-02T22_26_10	examples.model=bloom.task=wmt14_hi_en.templates=xglm-hi-en-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_26_10.newline-cut-custom-truncate.tsv	25.65
+bloom	wmt14_hi_en	xglm-hi-en-source+target	2	1234	newline-cut	2023-01-02T22_26_10	examples.model=bloom.task=wmt14_hi_en.templates=xglm-hi-en-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_26_10.newline-cut.tsv	25.68
+bloom	wmt14_hi_en	xglm-hi-en-source+target	2	1234		2023-01-02T22_26_10	examples.model=bloom.task=wmt14_hi_en.templates=xglm-hi-en-source+target.fewshot=2.seed=1234.timestamp=2023-01-02T22_26_10.tsv	25.69
