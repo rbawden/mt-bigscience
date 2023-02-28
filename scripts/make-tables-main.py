@@ -194,8 +194,8 @@ tab_format='latex'
 #tab_format = "markdown"
 
 # print out all tables from this results file
-metric = 'bleu'
-#metric = 'comet'
+#metric = 'bleu'
+metric = 'comet'
 
 
 # choose one of these and comment the other
