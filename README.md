@@ -27,7 +27,73 @@ TODO:
 - generate BLEU and COMET scores
 - add tables to README with results?
 
-## Results
+## Results (BLEU scores)
+
+### Cross-dataset and model comparison (focus on English-French and English-Hindi)
+
+WMT14 results (Original outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 14.91 | 1.21 | 29.27 | 12.95 |
+| en→fr | 1 | 27.83 | 1.41 | 25.24 | 21.92 |
+| fr→en | 0 | 15.52 | 25.79 | 32.88 | 15.54 |
+| fr→en | 1 | 34.61 | 21.01 | 30.03 | 24.55 |
+| en→hi | 0 | 6.80 | 0.16 | 11.20 | 0.14 |
+| en→hi | 1 | 13.62 | 0.12 | 9.50 | 0.08 |
+| hi→en | 0 | 12.05 | 0.00 | 26.13 | 0.42 |
+| hi→en | 1 | 25.04 | 0.01 | 20.15 | 0.58 |
+
+DiaBLa results (Original outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 0.88 | 0.52 | 28.44 | 0.53 |
+| en→fr | 1 | 5.70 | 0.61 | 21.03 | 15.52 |
+| fr→en | 0 | 0.85 | 25.51 | 34.96 | 0.83 |
+| fr→en | 1 | 12.05 | 20.57 | 26.88 | 12.05 |
+
+Flores-101 results (Original outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 2.77 | 1.86 | 55.45 | 2.76 |
+| en→fr | 1 | 44.99 | 2.13 | 53.53 | 24.36 |
+| fr→en | 0 | 2.73 | 31.90 | 0.00 | 2.59 |
+| fr→en | 1 | 45.59 | 24.86 | 58.22 | 16.74 |
+| en→hi | 0 | 1.29 | 0.15 | 67.69 | 0.07 |
+| en→hi | 1 | 27.25 | 0.06 | 54.66 | 0.12 |
+| hi→en | 0 | 3.40 | 0.00 | 59.55 | 0.10 |
+| hi→en | 1 | 35.06 | 0.19 | 57.32 | 0.45 |
+
+WMT14 results (Truncated outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 14.91 | 1.21 | 29.27 | 12.95 |
+| en→fr | 1 | 27.83 | 1.41 | 25.24 | 21.92 |
+| fr→en | 0 | 15.52 | 25.79 | 32.88 | 15.54 |
+| fr→en | 1 | 34.61 | 21.01 | 30.03 | 24.55 |
+| en→hi | 0 | 6.80 | 0.16 | 11.20 | 0.14 |
+| en→hi | 1 | 13.62 | 0.12 | 9.50 | 0.08 |
+| hi→en | 0 | 12.05 | 0.00 | 26.13 | 0.42 |
+| hi→en | 1 | 25.04 | 0.01 | 20.15 | 0.58 |
+
+DiaBLa results (Truncated outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 0.88 | 0.52 | 28.44 | 0.53 |
+| en→fr | 1 | 5.70 | 0.61 | 21.03 | 15.52 |
+| fr→en | 0 | 0.85 | 25.51 | 34.96 | 0.83 |
+| fr→en | 1 | 12.05 | 20.57 | 26.88 | 12.05 |
+
+Flores-101 results (Truncated outputs)
+Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |
+|---|---|---|---|---|---|
+| en→fr | 0 | 2.77 | 1.86 | 55.45 | 2.76 |
+| en→fr | 1 | 44.99 | 2.13 | 53.53 | 24.36 |
+| fr→en | 0 | 2.73 | 31.90 | 0.00 | 2.59 |
+| fr→en | 1 | 45.59 | 24.86 | 58.22 | 16.74 |
+| en→hi | 0 | 1.29 | 0.15 | 67.69 | 0.07 |
+| en→hi | 1 | 27.25 | 0.06 | 54.66 | 0.12 |
+| hi→en | 0 | 3.40 | 0.00 | 59.55 | 0.10 |
+| hi→en | 1 | 35.06 | 0.19 | 57.32 | 0.45 |
 
 ### Flores-101: High-resource, 1-shot
 (Original outputs with no postprocessing)
