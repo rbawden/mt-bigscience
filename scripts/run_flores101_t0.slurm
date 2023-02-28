@@ -3,7 +3,7 @@
 #SBATCH -A ncm@v100
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=16           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)  
-#SBATCH --job-name=safe   # nom du job
+#SBATCH --job-name=flores   # nom du job
 #SBATCH --ntasks=1             # Nombre total de processus MPI
 #SBATCH --ntasks-per-node=1    # Nombre de processus MPI par noeud
 # Dans le vocabulaire Slurm "multithread" fait référence à l'hyperthreading.

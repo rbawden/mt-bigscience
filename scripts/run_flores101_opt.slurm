@@ -1,16 +1,17 @@
 #!/bin/bash
-#SBATCH -C v100-32g
-#SBATCH -A ncm@v100
-#SBATCH --gres=gpu:4
-#SBATCH --cpus-per-task=32           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)
-#SBATCH --job-name=safe   # nom du job
+#SBATCH -C a100
+#SBATCH --partition=gpu_p5
+#SBATCH -A ncm@a100
+#SBATCH --gres=gpu:8
+#SBATCH --cpus-per-task=64           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)
+#SBATCH --job-name=flores   # nom du job
 #SBATCH --ntasks=1             # Nombre total de processus MPI
 #SBATCH --ntasks-per-node=1    # Nombre de processus MPI par noeud
 # Dans le vocabulaire Slurm "multithread" fait référence à l'hyperthreading.
 #SBATCH --hint=nomultithread   # 1 processus MPI par coeur physique (pas d'hyperthreading)
 #SBATCH --time=12:00:00        # Temps d’exécution maximum demande (HH:MM:SS)
-#SBATCH --output=flores_mt0-xxl_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
-#SBATCH --error=flores_mt0-xxl_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
+#SBATCH --output=flores_opt_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
+#SBATCH --error=flores_opt_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
 
 # go into the submission directory
 cd ${SLURM_SUBMIT_DIR}
@@ -20,7 +21,7 @@ outputdir=$maindir/runs/outputs
 [ -d $outputdir ] || mkdir $outputdir
 
 modelname=opt
-modelpath=facebook/opt-66b # you may need to download a local copy
+modelpath=/gpfsdswork/dataset/HuggingFace_Models/facebook/opt-66b # facebook/opt-66b # you may need to download a local copy 
 tokeniserpath=$modelpath
 
 task=flores_101_mt
@@ -44,5 +45,5 @@ echo "Writing to: $output"
 export CUDA_LAUNCH_BLOCKING=1
 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1 \
 TOKENIZERS_PARALLELISM=false \
-python $maindir/main.py --model_api_name 'hf-seq2seq' --model_args "use_accelerate=True,pretrained=$modelpath,tokenizer=$tokeniserpath,dtype=float32" \
+python $maindir/main.py --model_api_name 'hf-causal' --model_args "use_accelerate=True,pretrained=$modelpath,tokenizer=$tokeniserpath,dtype=float32" \
     --task_name $task --template_names "$template" --num_fewshot $fewshotnum --seed $seed --output_path "$output" --batch_size $batchsize --no_tracking --use_cache --device cuda
