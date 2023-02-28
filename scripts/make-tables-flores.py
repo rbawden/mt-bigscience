@@ -1,4 +1,4 @@
-#!/usr/bin/pythonA
+#!/usr/bin/python
 import pandas as pd
 
 lang2code = {
