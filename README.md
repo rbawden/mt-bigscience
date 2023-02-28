@@ -2,6 +2,17 @@
 
 Evaluation results for Machine Translation within the BigScience project
 
+## Citation
+
+This repository contains codes and outputs to accompany the paper ``Investigating the Translation Performance of a Large Multilingual
+Language Model: the Case of BLOOM''. Please cite the following:
+
+```
+@misc{bloom-eval-2023
+TBD
+}
+```
+
 ## Outputs and evaluation
 
 ### Extract all predictions and evaluate
@@ -21,7 +32,6 @@ python scripts/make-tables-flores.py
 
 TODO:
 - script to generate all eval tables
-- check that slurm scripts work (they have been cleaned up a bit) and that they run with the right number of GPUs and amount of memory
 - add citation
 - make sure all outputs present
 - generate BLEU and COMET scores
