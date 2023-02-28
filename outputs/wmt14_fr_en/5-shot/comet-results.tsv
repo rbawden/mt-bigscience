@@ -1,4 +1,4 @@
-model	task	template	fewshot	seed	postproc	timestamp	filename	comet
+model	task	template	fewshot	seed	postproc	timestamp	filename	COMET
 bloom	wmt14_fr_en	xglm-en-fr-source+target	5	1234	newline-cut-custom-truncate	2022-12-31T00_17_33	examples.model=bloom.task=wmt14_fr_en.templates=xglm-en-fr-source+target.fewshot=5.seed=1234.timestamp=2022-12-31T00_17_33.newline-cut-custom-truncate.tsv	0.4880
 bloom	wmt14_fr_en	xglm-en-fr-source+target	5	1234	newline-cut	2022-12-31T00_17_33	examples.model=bloom.task=wmt14_fr_en.templates=xglm-en-fr-source+target.fewshot=5.seed=1234.timestamp=2022-12-31T00_17_33.newline-cut.tsv	0.4925
 bloom	wmt14_fr_en	xglm-en-fr-source+target	5	1234		2022-12-31T00_17_33	examples.model=bloom.task=wmt14_fr_en.templates=xglm-en-fr-source+target.fewshot=5.seed=1234.timestamp=2022-12-31T00_17_33.tsv	0.4896

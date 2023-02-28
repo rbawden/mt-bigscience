@@ -1,4 +1,4 @@
-model	task	template	fewshot	seed	postproc	timestamp	filename	comet
+model	task	template	fewshot	seed	postproc	timestamp	filename	COMET
 bloom	diabla_1_shot_context_opposite	xglm-source+target	1	1234	newline-cut-custom-truncate	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm-source+target.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut-custom-truncate.tsv	0.7423
 bloom	diabla_1_shot_context_opposite	xglm-source+target	1	1234	newline-cut	2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm-source+target.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.newline-cut.tsv	0.5883
 bloom	diabla_1_shot_context_opposite	xglm-source+target	1	1234		2022-12-26T10_51_01	examples.model=bloom.task=diabla_1_shot_context_opposite.templates=xglm-source+target.fewshot=1.seed=1234.timestamp=2022-12-26T10_51_01.French-English.tsv	0.5184

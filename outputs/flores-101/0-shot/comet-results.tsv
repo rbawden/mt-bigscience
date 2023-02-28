@@ -1,4 +1,4 @@
-model	task	template	fewshot	seed	postproc	timestamp	filename	comet
+model	task	template	fewshot	seed	postproc	timestamp	filename	COMET
 bloom	flores_101_mt	translate-this-French-English-source+target	0	1234	newline-cut-custom-truncate	2022-09-15T17_34_13	examples.model=bloom.task=flores_101_mt.templates=translate-this-French-English-source+target.fewshot=0.seed=1234.timestamp=2022-09-15T17_34_13.newline-cut-custom-truncate.tsv	-1.4914	
 bloom	flores_101_mt	translate-this-French-English-source+target	0	1234	newline-cut	2022-09-15T17_34_13	examples.model=bloom.task=flores_101_mt.templates=translate-this-French-English-source+target.fewshot=0.seed=1234.timestamp=2022-09-15T17_34_13.newline-cut.tsv	-1.4934	
 bloom	flores_101_mt	translate-this-French-English-source+target	0	1234		2022-09-15T17_34_13	examples.model=bloom.task=flores_101_mt.templates=translate-this-French-English-source+target.fewshot=0.seed=1234.timestamp=2022-09-15T17_34_13.tsv	-1.5131	
