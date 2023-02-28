@@ -175,10 +175,11 @@ def main_comparison(metric, tab_format="latex"):
         
             print(r'\bottomrule')
             print(r'\end{tabular}}')
-            print(r'\caption{\label{tab:xglm-main-orig}')
             if postproc == '':
+                print(r'\caption{\label{tab:xglm-main-orig}')
                 print(r'Original predictions}')
             else:
+                print(r'\caption{\label{tab:xglm-main-truncated}')
                 print(r'Truncated predictions}')
             print(r'\end{subtable}')
         else:
