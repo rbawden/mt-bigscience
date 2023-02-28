@@ -4,14 +4,14 @@
 #SBATCH -A lmy@a100
 #SBATCH --gres=gpu:8
 #SBATCH --cpus-per-task=64           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)  
-#SBATCH --job-name=safe   # nom du job
+#SBATCH --job-name=flores   # nom du job
 #SBATCH --ntasks=1             # Nombre total de processus MPI
 #SBATCH --ntasks-per-node=1    # Nombre de processus MPI par noeud
 # Dans le vocabulaire Slurm "multithread" fait référence à l'hyperthreading.
 #SBATCH --hint=nomultithread   # 1 processus MPI par coeur physique (pas d'hyperthreading)
 #SBATCH --time=8:00:00        # Temps d’exécution maximum demande (HH:MM:SS)
-#SBATCH --output=flores_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
-#SBATCH --error=flores_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
+#SBATCH --output=flores_bloom_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
+#SBATCH --error=flores_bloom_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
 
 # go into the submission directory 
 cd ${SLURM_SUBMIT_DIR}
@@ -40,7 +40,7 @@ template=flores-xglm-Bengali-English
 #template="flores-xglm-Yoruba-Swahili"
 
 # choose a fewshot number
-fewshotnum=1
+#fewshotnum=1
 fewshotnum=0
 
 seed=1234

@@ -1,19 +1,16 @@
 #!/bin/bash
-##SBATCH -C a100
 #SBATCH -C v100-32g
-##SBATCH --partition=gpu_p5
-##SBATCH -A lmy@a100
 #SBATCH -A ncm@v100
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=32           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)  
-#SBATCH --job-name=safe   # nom du job
+#SBATCH --job-name=WMT   # nom du job
 #SBATCH --ntasks=1             # Nombre total de processus MPI
 #SBATCH --ntasks-per-node=1    # Nombre de processus MPI par noeud
 # Dans le vocabulaire Slurm "multithread" fait référence à l'hyperthreading.
 #SBATCH --hint=nomultithread   # 1 processus MPI par coeur physique (pas d'hyperthreading)
 #SBATCH --time=12:00:00        # Temps d’exécution maximum demande (HH:MM:SS)
-#SBATCH --output=flores_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
-#SBATCH --error=flores_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
+#SBATCH --output=wmt_t0_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
+#SBATCH --error=wmt_t0_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
 
 # go into the submission directory 
 cd ${SLURM_SUBMIT_DIR}

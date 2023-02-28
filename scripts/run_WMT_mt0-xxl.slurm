@@ -6,14 +6,14 @@
 #SBATCH -A ncm@v100
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=32           # number of cores per task (with gpu_p2: 1/8 of the 8-GPUs node)  
-#SBATCH --job-name=safe   # nom du job
+#SBATCH --job-name=wmt   # nom du job
 #SBATCH --ntasks=1             # Nombre total de processus MPI
 #SBATCH --ntasks-per-node=1    # Nombre de processus MPI par noeud
 # Dans le vocabulaire Slurm "multithread" fait référence à l'hyperthreading.
 #SBATCH --hint=nomultithread   # 1 processus MPI par coeur physique (pas d'hyperthreading)
 #SBATCH --time=12:00:00        # Temps d’exécution maximum demande (HH:MM:SS)
-#SBATCH --output=flores_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
-#SBATCH --error=flores_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
+#SBATCH --output=wmt_mt0-xxl_%j.out  # Nom du fichier de sortie contenant l'ID et l'indice
+#SBATCH --error=wmt-mt0-xxl_%j.out   # Nom du fichier d'erreur (ici commun avec la sortie)
 
 # go into the submission directory 
 cd ${SLURM_SUBMIT_DIR}
@@ -23,7 +23,7 @@ outputdir=$maindir/runs/outputs
 [ -d $outputdir ] || mkdir $outputdir
 
 modelname=mt0-xxl
-modelpath=bigscience/mt0-xxl #/gpfswork/rech/ncm/ulv12mq/mt0-xxl # you may need to download a local copy
+modelpath=/gpfswork/rech/ncm/ulv12mq/mt0-xxl #bigscience/mt0-xxl # you may need to download a local copy
 tokeniserpath=$modelpath
 
 # choose a task and comment the other
@@ -55,4 +55,4 @@ echo "Writing to: $output"
 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1 \
 TOKENIZERS_PARALLELISM=false \
 python $maindir/main.py --model_api_name 'hf-seq2seq' --model_args "use_accelerate=True,pretrained=$modelpath,tokenizer=$tokeniserpath,dtype=float32" \
-    --task_name $task --template_names "$template" --num_fewshot $fewshotnum --seed $seed --output_path "$output" --batch_size $batchsize --no_tracking --use_cache --device cuda
+    --task_name $task --template_names "$template" --num_fewshot $fewshotnum --seed $seed --output_path "$output" --batch_size $batchsize --no_tracking --use_cache --device cuda 
