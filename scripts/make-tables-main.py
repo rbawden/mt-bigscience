@@ -4,7 +4,6 @@ import pandas as pd
 # load the results files (tsv format) as a dataframe
 def load_df(filename, model, postproc, task):
     data = pd.read_csv(filename, delimiter="\t", index_col=False)
-    print(filename, model)
     data = data[data["model"] == model]
     data = data[data["task"] == task]
     data = data.fillna("")
@@ -59,9 +58,12 @@ def main_comparison(metric, tab_format="latex"):
     # headers
     metric_col = metric.upper()
     spmetric_col = metric_col if metric == 'comet' else 'spBLEU'
-    print(r'\begin{table}[!ht]')
-    for postproc in ('', 'newline-cut-custom-truncate'):
-        print(r'''\begin{subtable}[h]{0.48\textwidth}
+    if tab_format == "latex":
+        print(r'\begin{table}[!ht]')
+    for postproc in ['', 'newline-cut-custom-truncate']:
+        res_type = 'Original' if postproc == '' else 'Truncated'
+        if tab_format == "latex":
+            print(r'''\begin{subtable}[h]{0.48\textwidth}
             \centering\small
             \resizebox{\linewidth}{!}{
             \begin{tabular}{lrrrrrrrrr}
@@ -71,76 +73,128 @@ def main_comparison(metric, tab_format="latex"):
             \midrule''')
     
         # WMT
-        print(r'\multicolumn{5}{l}{WMT 2014} \\')
-        print(r'\midrule')
-        postproc = ''
+        if tab_format == "latex":
+            print(r'\multicolumn{5}{l}{WMT 2014} \\')
+            print(r'\midrule')
+        else:
+           
+            print('\nWMT14 results (' + res_type + ' outputs)')
+            print(r'Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |')
+            print(r'|---|---|---|---|---|---|')
         task = dataset = 'wmt14_fr_en'
         template = 'xglm-en-fr-source+target'
         row_results = one_row(data[postproc][dataset][task], template, metric_col)
-        print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| en→fr | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         template = 'xglm-fr-en-source+target'
         row_results = one_row(data[postproc][dataset][task], template, metric_col)
-        print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| fr→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         task = dataset = 'wmt14_hi_en'
         template = 'xglm-en-hi-source+target'
         row_results = one_row(data[postproc][dataset][task], template, metric_col)
-        print(r'en$\rightarrow$hi & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'en$\rightarrow$hi & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| en→hi | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         template = 'xglm-hi-en-source+target'
         row_results = one_row(data[postproc][dataset][task], template, metric_col)
-        print(r'hi$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
-        print(r'\midrule')
+        if tab_format == "latex":
+            print(r'hi$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+            print(r'\midrule')
+        else:
+            print(r'| hi→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         
         # Diabla
-        postproc, dataset, template = '', 'diabla', 'xglm-source+target'
-        print(r'\multicolumn{5}{l}{DiaBLa} \\')
-        print(r'\midrule')
+        dataset, template = 'diabla', 'xglm-source+target'
+        if tab_format == "latex":
+            print(r'\multicolumn{5}{l}{DiaBLa} \\')
+            print(r'\midrule')
+        else:
+            print('\nDiaBLa results (' + res_type + ' outputs)')
+            print(r'Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |')
+            print(r'|---|---|---|---|---|---|')
         row_results = one_row(data[postproc][dataset + 'en-fr'][dataset], template, metric_col)
-        print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| en→fr | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         row_results = one_row(data[postproc][dataset + 'fr-en'][dataset], template, metric_col)
-        print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
-        print(r'\midrule')
+        if tab_format == "latex":
+            print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+            print(r'\midrule')
+        else:
+            print(r'| fr→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         
         # Flores
-        print(r'\multicolumn{5}{l}{Flores-101} \\')
-        print(r'\midrule')
-        postproc, dataset = '', 'flores-101'
+        if tab_format == "latex":
+            print(r'\multicolumn{5}{l}{Flores-101} \\')
+            print(r'\midrule')
+        else:
+            print('\nFlores-101 results (' + res_type + ' outputs)')
+            print(r'Lang. dir | #shots | BLOOM | T0 | mT0-xxl | OPT |')
+            print(r'|---|---|---|---|---|---|')
+        dataset = 'flores-101'
         template = 'xglm-English-French-source+target'
 
         row_results = one_row(data[postproc][dataset]['flores_101_mt'], template, spmetric_col)
-        print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'en$\rightarrow$fr & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| en→fr | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         template = 'xglm-French-English-source+target'
         row_results = one_row(data[postproc][dataset]['flores_101_mt'], template, spmetric_col)
-        print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'fr$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| fr→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         template = 'xglm-English-Hindi-source+target'
         row_results = one_row(data[postproc][dataset]['flores_101_mt'], template, spmetric_col)
-        print(r'en$\rightarrow$hi & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'en$\rightarrow$hi & ' + ' & '.join(row_results) + r' \\')
+        else:
+            print(r'| en→hi | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'| | 1 | ' + ' | '.join(row_results[5:]) + ' |')
         template = 'xglm-Hindi-English-source+target'
         
         row_results = one_row(data[postproc][dataset]['flores_101_mt'], template, spmetric_col)
-        print(r'hi$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
+        if tab_format == "latex":
+            print(r'hi$\rightarrow$en & ' + ' & '.join(row_results) + r' \\')
         
-        print(r'\bottomrule')
-        print(r'\end{tabular}}')
-        print(r'\caption{\label{tab:xglm-main-orig}')
-        if postproc == '':
-            print(r'Original predictions}')
+            print(r'\bottomrule')
+            print(r'\end{tabular}}')
+            print(r'\caption{\label{tab:xglm-main-orig}')
+            if postproc == '':
+                print(r'Original predictions}')
+            else:
+                print(r'Truncated predictions}')
+            print(r'\end{subtable}')
         else:
-            print(r'Truncated predictions}')
-        print(r'\end{subtable}')
-    print(r'\end{table}')
+            print(r'| hi→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
+            print(r'|  | 1 | ' + ' | '.join(row_results[5:]) + ' |')
+    if tab_format == "latex":
+        print(r'\end{table}')
 
-
-# choose which type of postprocessing to include (original or truncated)
-postproc = ""  # original
-# postproc='newline-cut-custom-truncate' # truncated
 
 # table format latex or markdown
-# tab_format='latex'
-tab_format = "markdown"
+tab_format='latex'
+#tab_format = "markdown"
 
 # print out all tables from this results file
-#metric = 'bleu'
-metric = 'comet'
+metric = 'bleu'
+#metric = 'comet'
 
 
 # choose one of these and comment the other
@@ -148,4 +202,4 @@ metric = 'comet'
 # results_file = comet_results_file
 
 # print all tables
-main_comparison(metric)
+main_comparison(metric, tab_format)
