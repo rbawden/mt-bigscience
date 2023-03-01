@@ -25,9 +25,14 @@ This extracts all predictions from .jsonl files into .tsv files and calculates B
 - `outputs/{wmt14_hi_en,wmt14_fr_en,flores-101}/{0,1,2,5}-shot/{comet,bleu}-results.tsv` for WMT and flores-101
 - `outputs/diabla/{0,1}-shot/{comet,bleu}-results.{English-French,French-English}.tsv` for DiaBLa.
 
+Three versions of each output are generated:
+1. The original outputs
+2. The outputs truncated at the first newline (newline-cut)
+3. The outputs truncated at the first newline or before the first repetition of the 'xglm' prompt (newline-cut-custom-truncate). This corresponds to the truncated outputs from the paper.
+
 Generate latex tables:
 ```
-python scripts/make-tables-flores.py
+python scripts/make-tables-{flores,diabla,wmt}.py
 ```
 
 
