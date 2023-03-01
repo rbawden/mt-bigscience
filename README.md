@@ -30,12 +30,6 @@ Generate latex tables:
 python scripts/make-tables-flores.py
 ```
 
-TODO:
-- script to generate all eval tables
-- add citation
-- make sure all outputs present
-- generate BLEU and COMET scores
-- add tables to README with results?
 
 ## Results (BLEU scores)
 
