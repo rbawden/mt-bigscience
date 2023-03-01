@@ -1,6 +1,6 @@
 # MT@BigScience
 
-Evaluation results for Machine Translation within the BigScience project. Evaluating is carried out using the BigScience fork of [https://github.com/bigscience-workshop/lm-evaluation-harness](lm-evaluation-harness) coupled with the eval-hackathon branch of [https://github.com/bigscience-workshop/promptsource/tree/eval-hackathon](PromptSource).
+Evaluation results for Machine Translation within the BigScience project. Evaluating is carried out using the BigScience fork of [lm-evaluation-harness](https://github.com/bigscience-workshop/lm-evaluation-harness) coupled with the eval-hackathon branch of [PromptSource](https://github.com/bigscience-workshop/promptsource/tree/eval-hackathon).
 
 ## Citation
 
