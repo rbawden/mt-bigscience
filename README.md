@@ -4,8 +4,8 @@ Evaluation results for Machine Translation within the BigScience project. Evalua
 
 ## Citation
 
-This repository contains codes and outputs to accompany the paper ``Investigating the Translation Performance of a Large Multilingual
-Language Model: the Case of BLOOM''. Please cite the following:
+This repository contains codes and outputs to accompany the paper "Investigating the Translation Performance of a Large Multilingual
+Language Model: the Case of BLOOM". Please cite the following:
 
 ```
 @misc{bloom-eval-2023
