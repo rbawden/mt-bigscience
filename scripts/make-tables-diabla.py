@@ -90,7 +90,7 @@ def context_table(bleu_results_file_enfr, bleu_results_file_fren,
     if tab_format == "latex":    
         print(r'''\bottomrule
         \end{tabular}}
-        \caption{Comparison of 1-shot results (BLEU) for the DiaBLa dataset when using the previous sentence or a random sentence for the 1-shot example (using the \texttt{xglm} prompt). In bold are the best results for each language direction.}
+        \caption{Comparison of 1-shot results (BLEU) for the DiaBLa dataset when using the previous sentence or a random sentence for the 1-shot example (using the \texttt{xglm-source+target} prompt). In bold are the best results for each language direction.}
         \label{tab:diabla-context-results}
         \end{table}''')
 
