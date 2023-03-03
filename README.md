@@ -8,8 +8,11 @@ This repository contains codes and outputs to accompany the paper "Investigating
 Language Model: the Case of BLOOM". Please cite the following:
 
 ```
-@misc{bloom-eval-2023
-TBD
+@misc{Bawden-Yvon-bloom-mt-2023,
+    authors = {Bawden, Rachel and Yvon, François},
+    title = {Investigating the Translation Performance of a Large Multilingual
+Language Model: the Case of {BLOOM}},
+    year = {2023}
 }
 ```
 
