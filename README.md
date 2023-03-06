@@ -4,14 +4,16 @@ Evaluation results for Machine Translation within the BigScience project. Evalua
 
 ## Citation
 
-This repository contains codes and outputs to accompany the paper "Investigating the Translation Performance of a Large Multilingual
-Language Model: the Case of BLOOM". Please cite the following:
+This repository contains codes and outputs to accompany the paper ["Investigating the Translation Performance of a Large Multilingual
+Language Model: the Case of BLOOM"](https://arxiv.org/abs/2303.01911). Please cite the following:
 
 ```
-@misc{Bawden-Yvon-bloom-mt-2023,
+@misc{bawden-yvon-bloom-mt-2023,
     authors = {Bawden, Rachel and Yvon, François},
     title = {Investigating the Translation Performance of a Large Multilingual
 Language Model: the Case of {BLOOM}},
+    publisher = {arXiv},
+    url = {https://arxiv.org/abs/2303.01911},
     year = {2023}
 }
 ```
