@@ -14,6 +14,7 @@ def load_df(filename, model, postproc, task):
 # table of high-resource MT results
 def main_comparison(metric, tab_format="latex"):
     data = {}
+    precision = 4 if metric == 'comet' else 2
     for postproc in '', 'newline-cut-custom-truncate':
         data[postproc] = {}
         for dataset, task in [('wmt14_fr_en', 'wmt14_fr_en'), ('wmt14_fr_en', 'wmt14_en_fr'),
@@ -39,7 +40,7 @@ def main_comparison(metric, tab_format="latex"):
                         filename = "outputs/" + dataset + "/" + str(shot) + "-shot/" + metric + "-results.tsv"
                         data[postproc][dataset][task][shot][model] = load_df(filename, model, postproc, task)
 
-    def one_row(sub_data, template, colmetric, precision=2):
+    def one_row(sub_data, template, colmetric):
         list_results = []
         for shot in 0, 1:
             for model in 'bloom', 't0', 'mt0-xxl', 'opt':
@@ -176,16 +177,26 @@ def main_comparison(metric, tab_format="latex"):
             print(r'\bottomrule')
             print(r'\end{tabular}}')
             if postproc == '':
-                print(r'\caption{\label{tab:xglm-main-orig}')
+                if metric == 'comet':
+                    print(r'\caption{\label{tab:xglm-main-orig-comet}')
+                else:
+                    print(r'\caption{\label{tab:xglm-main-orig}')
                 print(r'Original predictions}')
             else:
-                print(r'\caption{\label{tab:xglm-main-truncated}')
+                if metric == 'comet':
+                    print(r'\caption{\label{tab:xglm-main-truncated-comet}')
+                else:
+                    print(r'\caption{\label{tab:xglm-main-truncated}')
                 print(r'Truncated predictions}')
             print(r'\end{subtable}')
         else:
             print(r'| hi→en | 0 | ' + ' | '.join(row_results[:4]) + ' |')
             print(r'|  | 1 | ' + ' | '.join(row_results[5:]) + ' |')
     if tab_format == "latex":
+        if metric == 'comet':
+            print(r'''\caption{\label{tab:xglm-main-comparison-comet}Comparison of COMET scores across the three datasets using the \texttt{xglm-source+target} prompt.}''')
+        else:
+            print(r'''\caption{\label{tab:xglm-main-comparison}Comparison of BLEU scores (spBLEU for Flores-101) across the three datasets using the \texttt{xglm-source+target} prompt.}''')
         print(r'\end{table}')
 
 
@@ -194,8 +205,8 @@ tab_format='latex'
 #tab_format = "markdown"
 
 # print out all tables from this results file
-metric = 'bleu'
-#metric = 'comet'
+#metric = 'bleu'
+metric = 'comet'
 
 
 # choose one of these and comment the other
