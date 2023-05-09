@@ -9,7 +9,7 @@ Language Model: the Case of BLOOM"](https://arxiv.org/abs/2303.01911). Please ci
 
 ```
 @inproceedings{bawden-yvon-bloom-mt-2023,
-    authors = {Bawden, Rachel and Yvon, François},
+    author = {Bawden, Rachel and Yvon, François},
     title = {Investigating the Translation Performance of a Large Multilingual
 Language Model: the Case of {BLOOM}},
     booktitle = {Proceedings of the 24th Annual Conference of the European Association for Machine Translation},
